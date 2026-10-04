@@ -1,6 +1,5 @@
 services:
   app:
-    image: moodbuds:latest
     depends_on:
       redis:
         condition: service_healthy
@@ -10,16 +9,16 @@ services:
     container_name: moodbuds-container
     environment:
       NODE_ENV: production
-      PORT: "8080"
+      PORT: "8083"
       REDIS_URL: redis://redis:6379
     ports:
-      - "8089:8080"
+      - "8089:8083"
     env_file:
       - .env
     restart: unless-stopped
   redis:
     image: redis:7-alpine
-    container_name: moodbuds-redis
+    container_name: moodbudsprod-redis
     volumes:
       - redis-store:/data
     healthcheck:

@@ -18,9 +18,18 @@
   },
   "homepage": "https://github.com/Aravcode2005/MBUDS-BLE#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
+    "connect-mongo": "^6.0.0",
+    "cookie-parser": "^1.4.7",
     "crypto": "^1.0.1",
+    "dotenv": "^18.0.5",
     "express": "^5.2.1",
-    "mongoose": "^9.9.4"
+    "ioredis": "^6.0.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4",
+    "multer": "^2.4.0",
+    "nodemailer": "^10.0.14",
+    "twilio": "^6.1.2"
   }
 }
