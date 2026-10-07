@@ -1,0 +1,21 @@
+main.test.js:        expect(Number(statusCode('http', process.env.PORT, Endpoints.at(i)))).toBe(200);
+server.js:    const allowedOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+server.js:        mongoUrl: process.env.MONGODB_URI,
+server.js:        secure: process.env.NODE_ENV === 'production'
+server.js:        message: process.env.NODE_ENV === 'production'
+server.js:const PORT = Number(process.env.PORT || 8080);
+controllers/authService.js:const redis = new Redis(process.env.REDIS_URL || 'redis://6379:6379');
+controllers/authService.js:        if (!process.env.SG_KEY) {
+controllers/authService.js:            auth: { user: 'apikey', pass: process.env.SG_KEY }
+controllers/authService.js:            from: process.env.OTP_FROM_EMAIL || 'aravlead@gmail.com',
+controllers/authService.js:        if (!process.env.TWILIO_ID || !process.env.TWILIO_AUTH_TOKEN || !process.env.TWILIO_PHONE_NO) {
+controllers/authService.js:        const client = twilio(process.env.TWILIO_ID, process.env.TWILIO_AUTH_TOKEN)
+controllers/authService.js:        const countryCode = process.env.DEFAULT_PHONE_COUNTRY_CODE || '+91'
+controllers/authService.js:            from: process.env.TWILIO_PHONE_NO,
+controllers/authService.js:            if (process.env.JWT_USER_SECRET) {
+controllers/authService.js:                    process.env.JWT_USER_SECRET,
+controllers/authService.js:                    { expiresIn: process.env.JWT_EXPIRES_IN || '1h' }
+controllers/authService.js:                    secure: process.env.NODE_ENV === 'production',
+controllers/authService.js:    if (!token || !process.env.JWT_USER_SECRET) {
+controllers/authService.js:        const decoded = jwt.verify(token, process.env.JWT_USER_SECRET)
+util/dataBase.js:const ConnectDB = mongoose.connect(process.env.MONGODB_URI, mongooptions);
