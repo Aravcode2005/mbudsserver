@@ -1,5 +1,4 @@
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
-
+const API_BASE_URL = (import.meta.env.API_BASE_URL || '').replace(/\/$/, '')
 const endpoints = {
   signup: '/moodbudsv1/signup',
   verifyOtp: '/moodbudsv1/verifyotp',
@@ -11,7 +10,6 @@ async function request(path, options = {}) {
     credentials: 'include',
     ...options,
   })
-
   const contentType = response.headers.get('content-type') || ''
   const payload = contentType.includes('application/json') ? await response.json() : { message: response.ok ? 'Success' : 'Something went wrong' }
 
@@ -51,10 +49,11 @@ export const authService = {
   },
 
   signin(data) {
-    return request(endpoints.signin, {
+      return request(endpoints.signin, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
   },
 }
+

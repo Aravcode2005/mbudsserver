@@ -1,10 +1,10 @@
 
-const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '').replace(/\/$/, '')
+const API_BASE_URL = (import.meta.env.API_BASE_URL || '').replace(/\/$/, '')
 const endpoints = {
   dashboard: '/moodbudsv1/dashboard',
   bluetooth: '/moodbudsv1/bluetooth',
 }
-async function getMentalState(data) {
+async function getMentalState(data) {0
   const url = `${API_BASE_URL}${endpoints.bluetooth}`;
   try {
     const response = await fetch(url, {

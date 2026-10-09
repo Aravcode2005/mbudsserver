@@ -1,14 +1,26 @@
 pipeline {
-
     agent any
-
     environment {
-       
+
     }
-    stages {
-      
-    }
+    stages { 
+      stage('Scm  checkout'){
+
+
+        }
+     stage('Run tests'){
+
+
+       }
+
+  stage('Build docker images'){
+
+
+        }
+
+ }
+ 
 post{
  
-    }
+  }
 }
