@@ -1,28 +1,22 @@
 pipeline {
-y
     agent any
-
-    environment {
-
-    }  
-    stages {
-      stage('Scm  checkout'){
-
-
+      stages {
+      stage('Checkout'){
+        steps{
+          echo 'Checking out from git'
+          checkout scm 
         }
-       stage('Run tests'){
-
-
-       }
-       
-       stage('Build docker images'){
-
-
-        }
-    }  
  
-post{
+     }
+    stage('Install Dependencies'){
+       steps{ 
+       echo 'Installing dependencies'
+       sh 'npm ci'
+     }
  
-    }
+   }
+    
+  } 
+ 
 }
- 
+
