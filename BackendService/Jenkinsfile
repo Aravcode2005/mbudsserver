@@ -17,8 +17,6 @@ pipeline {
        dir('BackendService'){
        sh '''
        set -e 
-       node --version
-       npm  --version
        docker --version
        docker info
       '''
