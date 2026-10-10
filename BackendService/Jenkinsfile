@@ -11,11 +11,11 @@ pipeline {
     stage('Install Dependencies'){
        steps{ 
        echo 'Installing dependencies'
-       sh 'npm ci'
-     }
-
-   }
-  
+       dir('BackendService'){
+          sh 'npm ci'
+       }
+      }
+     } 
   } 
 
 }
