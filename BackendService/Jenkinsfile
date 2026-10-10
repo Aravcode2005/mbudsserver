@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+      stages { 
+      stage('Checkout'){
+        steps{
+          echo 'Checking out from git'
+          checkout scm
+        }
+
+     }
+    stage('Install Dependencies'){
+       steps{ 
+       echo 'Installing dependencies'
+       sh 'npm ci'
+     }
+
+   }
+  
+  } 
+
+}
