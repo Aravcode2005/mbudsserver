@@ -3,7 +3,7 @@ pipeline {
       environment{
       APP_NAME='moodbuds'
       DOCKERFILE='Dockerfile'
-      IMAGE_TAG="${BUILD_NAME}"
+      IMAGE_TAG="${BUILD_NUMBER}"
       }         
       stages {
       stage('Checkout'){
@@ -14,7 +14,7 @@ pipeline {
      }
     stage('Verify Environment'){
       steps{
-       dir(BackendService){
+       dir('BackendService'){
        sh '''
        set -e 
        node --version
@@ -31,9 +31,9 @@ pipeline {
        dir('BackendService'){
           sh '''
           docker build \
-          -f "${DOCKERFILE}"\
-          -t "${APP_NAME}:${IMAGE_TAG}"\
-          -t "${APP_NAME}:${GIT_COMMIT}"\
+          -f "${DOCKERFILE}" \
+          -t "${APP_NAME}:${IMAGE_TAG}" \
+          -t "${APP_NAME}:${GIT_COMMIT}" \
           .
        '''
        }
