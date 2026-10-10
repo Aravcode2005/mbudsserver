@@ -16,12 +16,31 @@ pipeline {
       steps{
        dir('BackendService'){
        sh '''
-       set -e 
+       set -e
+       node --version
+       npm  --version 
        docker --version
        docker info
       '''
      }
   }
+}
+
+stage ('Install Dependencies'){
+
+steps{
+dir('BackendService'){
+
+sh '''
+
+npm ci
+
+'''
+
+ }
+
+ }
+
 }
   stage('Build docker image'){
        steps{ 
