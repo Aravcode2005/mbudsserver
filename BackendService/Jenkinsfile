@@ -15,12 +15,13 @@ pipeline {
     stage('Verify Environment'){
       steps{
        dir(BackendService){
-       sh'''
+       sh '''
        set -e 
        node --version
        npm  --version
        docker --version
        docker info
+      '''
      }
   }
 }
